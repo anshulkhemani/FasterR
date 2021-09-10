@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp">
+    <me.zhanghai.android.materialratingbar.MaterialRatingBar
+        android:layout_width="130dp"
+        android:id="@+id/rating_bar"
+        android:layout_marginTop="30dp"
+        android:progress="0"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="35dp"
+        android:padding="5dp"
+        style="@style/Widget.MaterialRatingBar.RatingBar" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Review"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        style="@style/T18"/>
+    <EditText
+        android:id="@+id/give_review"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="24dp"
+        android:gravity="start"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_border"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:fontFamily="@font/cera_pro_regular"
+        android:textColorHighlight="@color/fastergreen"
+        android:inputType="textMultiLine"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="30dp"
+        android:layout_height="50dp"
+        android:background="@color/fastergreen"
+        android:text="Submit"
+        android:fontFamily="@font/cera_pro_bold"
+        android:textSize="20sp"
+        android:id="@+id/alertRate" />
+</LinearLayout>

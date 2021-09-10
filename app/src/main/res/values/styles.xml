@@ -1,0 +1,79 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/blackish</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="ToolbarTitleBoldTextAppearance">
+        <item name="android:fontFamily">@font/cera_pro_bold</item>
+    </style>
+    <style name="T28">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">#000033</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:fontFamily">@font/cera_pro_bold</item>
+    </style>
+    <style name="T18">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#000033</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:fontFamily">@font/cera_pro_bold</item>
+    </style>
+    <style name="SurfaceAsBackgroundThemeOverlay">
+        <item name="colorSurface">?attr/colorBackground</item>
+    </style>
+    <style name="BigTitleUnderline">
+        <item name="android:layout_gravity">top|center_vertical</item>
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">4dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:background">@color/fastergreen</item>
+        <item name="android:dashGap">0dp</item>
+        <item name="android:dashWidth">4dp</item>
+    </style>
+    <style name="CustomCollapsingToolbar">
+        <item name="android:fontFamily">@font/cera_pro_bold</item>
+    </style>
+    <style name="CustomCollapsingToolbarExpanded">
+        <item name="android:visibility">invisible</item>
+    </style>
+    <style name="Widget.BottomNavigationView14" parent="@style/Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/cera_pro_font_family</item>
+    </style>
+    <style name="P16Secondary">
+        <item name="android:textColor">@color/blackish</item>
+        <item name="android:fontFamily">@font/cera_pro_thin</item>
+    </style>
+    <style name="TabTextAppearance">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/grayish</item>
+        <item name="android:fontFamily">@font/cera_pro_bold</item>
+        <item name="textAllCaps">false</item>
+    </style>
+    <style name="UserLibraryTabLayoutWidget">
+        <item name="tabBackground">@color/white</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:fontFamily">@font/cera_pro_bold</item>
+        <item name="tabIndicatorHeight">3dp</item>
+        <item name="tabMaxWidth">2048dp</item>
+        <item name="tabMode">@null</item>
+        <item name="tabSelectedTextColor">@color/blackish</item>
+        <item name="tabTextAppearance">@style/TabTextAppearance</item>
+    </style>
+    <style name="SummaryTabLayoutWidget">
+        <item name="tabBackground">@color/blackish</item>
+        <item name="android:background">@color/blackish</item>
+        <item name="android:fontFamily">@font/cera_pro_bold</item>
+        <item name="tabMaxWidth">2048dp</item>
+        <item name="tabMode">@null</item>
+        <item name="tabSelectedTextColor">@color/white</item>
+        <item name="color">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+</resources>

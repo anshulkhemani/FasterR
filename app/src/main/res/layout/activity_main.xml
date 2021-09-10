@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="350dp"
+    android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/logoImageView"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="13dp"
+                android:src="@drawable/ic_launch_logo_vector" />
+            <TextView
+                android:id="@+id/fasterr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:fontFamily="@font/cera_pro_bold"
+                android:text="FasterR"
+                android:textColor="#152247"
+                android:textSize="50sp"/>
+</LinearLayout>
+<!--ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_time"
+    android:layout_marginBottom="180dp"/-->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:lottie_rawRes="@raw/loading"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+</LinearLayout>

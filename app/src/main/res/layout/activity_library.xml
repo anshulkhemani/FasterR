@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="70dp"
+            android:background="@color/fastergreen"
+            android:text="Add new book"
+            android:fontFamily="@font/cera_pro_bold"
+            android:textSize="20sp"
+            android:id="@+id/add_book" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="70dp"
+            android:background="@color/fastergreen"
+            android:text="Remove a book"
+            android:fontFamily="@font/cera_pro_bold"
+            android:textSize="20sp"
+            android:id="@+id/remove_book" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="70dp"
+            android:background="@color/fastergreen"
+            android:text="Donated books"
+            android:fontFamily="@font/cera_pro_bold"
+            android:textSize="20sp"
+            android:id="@+id/donated" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="70dp"
+            android:background="@color/fastergreen"
+            android:text="Update library details"
+            android:fontFamily="@font/cera_pro_bold"
+            android:textSize="20sp"
+            android:id="@+id/update_library" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="70dp"
+            android:background="@color/fastergreen"
+            android:text="Logout"
+            android:fontFamily="@font/cera_pro_bold"
+            android:textSize="20sp"
+            android:id="@+id/logout" />
+    </LinearLayout>
+</ScrollView>

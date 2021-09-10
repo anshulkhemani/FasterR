@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:maxHeight="90dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cera_pro_bold"
+            android:id="@+id/summary_no"
+            android:layout_gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:text="1"
+            android:textColor="@color/blackish"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cera_pro_regular"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/summary_heading"
+            android:text="Starting early and specializing is fashionable, but has dubious merit."
+            android:layout_marginLeft="26dp"
+            android:maxLines="3"
+            android:layout_marginRight="40dp"
+            android:layout_toRightOf="@id/summary_no"
+            android:layout_centerVertical="true" android:textColor="@color/blackish"
+            android:textSize="16sp" />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:srcCompat="@drawable/ic_arrow_right_24dp" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#86968a"
+        />
+
+</LinearLayout>

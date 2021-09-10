@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fasterr">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launch_logo_vector"
+        android:label="FasterR"
+        android:roundIcon="@drawable/ic_launch_logo_vector"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".WelcomeActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".HomeScreenActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".NewsSummary" />
+        <activity android:name=".LibrariesActivity" />
+        <activity android:name=".SummaryActivity" />
+        <activity android:name=".SummaryReader" />
+        <activity android:name=".ActivityAudiobook" />
+        <activity android:name=".ProfileDetails" />
+        <activity android:name=".ActivityAdmin" />
+        <activity android:name=".LibraryActivity" />
+        <activity android:name=".EditorActivity" />
+        <activity android:name=".UserListActivity" />
+        <activity android:name=".AddSummary" />
+        <activity android:name=".AddNews" />
+        <activity android:name=".ActivityBookList" />
+        <activity android:name=".ActivityLibraryBooks" />
+        <activity android:name=".ActivitySearch" />
+        <activity android:name=".RatingsActivity" />
+
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+</manifest>

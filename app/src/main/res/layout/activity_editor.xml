@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="70dp"
+            android:background="@color/fastergreen"
+            android:text="Add book summary"
+            android:fontFamily="@font/cera_pro_bold"
+            android:textSize="20sp"
+            android:id="@+id/add_summary" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="70dp"
+            android:background="@color/fastergreen"
+            android:text="Add news article"
+            android:fontFamily="@font/cera_pro_bold"
+            android:textSize="20sp"
+            android:id="@+id/add_news" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="70dp"
+            android:background="@color/fastergreen"
+            android:text="Manage books"
+            android:fontFamily="@font/cera_pro_bold"
+            android:textSize="20sp"
+            android:id="@+id/manage_books" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="70dp"
+            android:background="@color/fastergreen"
+            android:text="MAnage news summary"
+            android:fontFamily="@font/cera_pro_bold"
+            android:textSize="20sp"
+            android:id="@+id/manage_data" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="70dp"
+            android:background="@color/fastergreen"
+            android:text="Reviews and Ratings"
+            android:fontFamily="@font/cera_pro_bold"
+            android:textSize="20sp"
+            android:id="@+id/reviews" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="70dp"
+            android:background="@color/fastergreen"
+            android:text="Logout"
+            android:fontFamily="@font/cera_pro_bold"
+            android:textSize="20sp"
+            android:id="@+id/logout" />
+    </LinearLayout>
+</ScrollView>

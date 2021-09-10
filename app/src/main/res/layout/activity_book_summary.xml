@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_marginRight="-10dp"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:background="@mipmap/book_background"
+
+            android:theme="@style/SurfaceAsBackgroundThemeOverlay">
+
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:collapsedTitleTextAppearance="@style/CustomCollapsingToolbar"
+                app:contentScrim="#22aa33"
+                app:expandedTitleMarginStart="-860dp"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+                app:title="Range">
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgShare"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:padding="16dp"
+                            app:srcCompat="@drawable/ic_share" />
+                        <ImageView
+                            android:id="@+id/imgWishlist"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:padding="16dp"
+                            app:srcCompat="@drawable/ic_bookmark" />
+                    </LinearLayout>
+
+
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="50dp"
+                app:layout_collapseMode="pin">
+
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/book_name"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cera_pro_bold"
+                    android:text="Range"
+                    android:textColor="@color/blackish"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/author_name"
+                    android:fontFamily="@font/cera_pro_bold"
+                    android:text="David Epstein"
+                    android:textColor="@color/blackish"
+                    android:textSize="18sp" />
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/description"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cera_pro_thin"
+                    android:text="Why Generalists Triumph in a Specialized World"
+                    android:textColor="@color/blackish"
+                    android:textSize="18sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/ratings">
+                <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                    android:layout_width="130dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="10dp"
+                    android:progress="90"
+                    android:layout_height="35dp"
+                    android:id="@+id/summary_rating"
+                    android:isIndicator="true"
+                    android:padding="5dp"
+                    style="@style/Widget.MaterialRatingBar.RatingBar" />
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="20dp"
+                        android:id="@+id/ratings_no"
+                        android:layout_marginTop="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cera_pro_thin"
+                        android:text="5 ratings >"
+                        android:textColor="@color/blackish"
+                        android:textSize="20sp" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="#86968a"
+                    android:layout_margin="15dp"
+                    />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    app:srcCompat="@drawable/ic_time" />
+                <TextView
+                    android:layout_marginLeft="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cera_pro_regular"
+                    android:text="15 mins"
+                    android:id="@+id/time"
+                    android:textColor="@color/blackish"
+                    android:textSize="18sp" />
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_tab_library" />
+                <TextView
+                    android:layout_marginLeft="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cera_pro_regular"
+                    android:text="8 pages"
+                    android:id="@+id/noP"
+                    android:textColor="@color/blackish"
+                    android:textSize="18sp" />
+            </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="#86968a"
+                    android:layout_margin="15dp"
+                    />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/introduction">
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cera_pro_bold"
+                    android:text="Introduction"
+                    android:textColor="@color/blackish"
+                    android:layout_weight="0.9"
+                    android:textSize="18sp" />
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:layout_weight="0.1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    app:srcCompat="@drawable/ic_arrow_right_24dp" />
+            </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="13dp"
+                    android:background="#86968a"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/summary_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    android:layout_marginBottom="28dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/finalSumm">
+                    <TextView
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cera_pro_bold"
+                        android:layout_weight="0.9"
+                        android:text="Final Summary"
+                        android:textColor="@color/blackish"
+                        android:textSize="18sp" />
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:layout_weight="0.1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        app:srcCompat="@drawable/ic_arrow_right_24dp" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="#86968a"
+                    />
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cera_pro_bold"
+                    android:text="What's it about?"
+                    android:textColor="@color/blackish"
+                    android:textSize="20sp" />
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/about"
+                    android:fontFamily="@font/cera_pro_regular"
+                    android:text="At a time when many see specialization as the route to success, Range (2019) shows that having broad interests and taking your time to find your focus in life lead to excellence and innovation. Drawing on examples from business, sports, science and human psychology, Range urges us all to stay open-minded and curious."
+                    android:textColor="#8800000f"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cera_pro_bold"
+                    android:text="Who's it for?"
+                    android:textColor="@color/blackish"
+                    android:textSize="20sp" />
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/who_for"
+                    android:fontFamily="@font/cera_pro_regular"
+                    android:layout_marginRight="20dp"
+                    android:text="Individuals searching for a purpose in life \nThe intellectually curious\nThose seeking an unconventional path to success"
+                    android:textColor="#8800000f"
+                    android:lineHeight="40dp"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cera_pro_bold"
+                    android:text="About the author"
+                    android:textColor="@color/blackish"
+                    android:textSize="20sp" />
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/about_author"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cera_pro_regular"
+                    android:layout_marginRight="20dp"
+                    android:text="David Epstein is an award-winning journalist and author with wide-ranging expertise in science and sports. He’s worked for ProPublica and Sports Illustrated as a senior writer. His TED Talk on the science of athletic performance has seven million views and was shared by Bill Gates – the greatest endorsement of his work since Barack Obama bought his first book, The Sports Gene."
+                    android:textColor="#8800000f"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="100dp"/>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="#080138"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/read_summary">
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_read" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:text="Read Summary"
+            android:fontFamily="@font/cera_pro_bold"
+            android:layout_weight="0.5"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="@color/white"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/play_audio">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="27dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_audiobook_headphone"
+            android:layout_marginRight="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:fontFamily="@font/cera_pro_bold"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:text="Play Audio"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+

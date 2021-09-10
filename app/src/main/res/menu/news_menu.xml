@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/topStories"
+        android:title="Top Stories"/>
+    <item android:id="@+id/india"
+        android:title="India"/>
+    <item android:id="@+id/global"
+        android:title="Global"/>
+    <item android:id="@+id/business"
+        android:title="Business"/>
+    <item android:id="@+id/politics"
+        android:title="Politics"/>
+    <item android:id="@+id/sports"
+        android:title="Sports"/>
+    <item android:id="@+id/technology"
+        android:title="Technology"/>
+    <item android:id="@+id/entertainment"
+        android:title="Entertainment"/>
+</menu>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorBackground" format="reference|color">
+    </attr>
+    <attr name="colorElevation" format="reference|color">
+    </attr>
+    <attr name="colorContainerSurface" format="reference|color">
+    </attr>
+    <attr name="colorContentPrimary" format="reference|color">
+    </attr>
+    <attr name="colorContentSecondary" format="reference|color">
+    </attr>
+</resources>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:navigationContentDescription="@string/accessibility_action_bar_up_description"
+                app:navigationIcon="@drawable/ic_arrow_back_24dp"
+                app:titleTextAppearance="@style/ToolbarTitleBoldTextAppearance">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/settings_title"
+                    android:textColor="@color/blackish"
+                    android:fontFamily="@font/cera_pro_bold"
+                    android:textSize="25sp"/>
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/pref_account"
+            android:textColor="@color/fastergreen"
+            android:fontFamily="@font/cera_pro_regular"
+            android:textSize="20sp"
+            android:layout_marginLeft="60dp"/>
+
+        <TextView
+            android:id="@+id/accountSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Profile details"
+            android:textColor="@color/blackish"
+            android:fontFamily="@font/cera_pro_regular"
+            android:textSize="20sp"
+            android:layout_marginLeft="60dp"/>
+
+        <TextView
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/log_out"
+            android:textColor="@color/blackish"
+            android:fontFamily="@font/cera_pro_regular"
+            android:textSize="20sp"
+            android:layout_marginLeft="60dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="25dp"
+            android:background="#ededed"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/manage_your_subscription"
+            android:textColor="@color/fastergreen"
+            android:fontFamily="@font/cera_pro_regular"
+            android:textSize="20sp"
+            android:layout_marginLeft="60dp"/>
+
+        <TextView
+            android:id="@+id/Membership"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Membership"
+            android:textColor="@color/blackish"
+            android:fontFamily="@font/cera_pro_regular"
+            android:textSize="20sp"
+            android:layout_marginLeft="60dp"/>
+        <TextView
+            android:id="@+id/MembershipType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Basic"
+            android:textColor="@color/grayish"
+            android:fontFamily="@font/cera_pro_regular"
+            android:textSize="17sp"
+            android:layout_marginLeft="60dp"/>
+
+        <TextView
+            android:id="@+id/upgrade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/upgrade_now"
+            android:textColor="@color/blackish"
+            android:fontFamily="@font/cera_pro_regular"
+            android:textSize="20sp"
+            android:layout_marginLeft="60dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="25dp"
+            android:background="#ededed"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/settings_category_about"
+            android:textColor="@color/fastergreen"
+            android:fontFamily="@font/cera_pro_regular"
+            android:textSize="20sp"
+            android:layout_marginLeft="60dp"/>
+
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="About FasterR"
+            android:textColor="@color/blackish"
+            android:fontFamily="@font/cera_pro_regular"
+            android:textSize="20sp"
+            android:layout_marginLeft="60dp"/>
+        <TextView
+            android:id="@+id/feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/pref_feedback"
+            android:textColor="@color/blackish"
+            android:fontFamily="@font/cera_pro_regular"
+            android:textSize="20sp"
+            android:layout_marginLeft="60dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/follow_us_on_facebook"
+            android:textColor="@color/blackish"
+            android:fontFamily="@font/cera_pro_regular"
+            android:textSize="20sp"
+            android:layout_marginLeft="60dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/pref_version"
+            android:textColor="@color/blackish"
+            android:fontFamily="@font/cera_pro_regular"
+            android:textSize="20sp"
+            android:layout_marginLeft="60dp"/>
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="1.0"
+            android:textColor="@color/grayish"
+            android:fontFamily="@font/cera_pro_regular"
+            android:textSize="20sp"
+            android:layout_marginLeft="60dp"/>
+
+
+
+
+    </LinearLayout>
+</ScrollView>

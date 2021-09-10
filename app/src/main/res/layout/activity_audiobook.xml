@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#152247">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#152247">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_collapseMode="pin"
+            app:contentInsetStart="0dp">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_arrow_back_white_24dp" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/appBarLayout"
+        android:id="@+id/audiobook_cover"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:src="@mipmap/book_background"
+        android:scaleType="centerCrop"/>
+    <TextView
+        android:id="@+id/audio_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/cera_pro_bold"
+        android:text="Range"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:layout_below="@+id/audiobook_cover"/>
+    <TextView
+        android:id="@+id/audio_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="7dp"
+        android:fontFamily="@font/cera_pro_regular"
+        android:text="by David Epstein"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:layout_below="@+id/audio_heading"/>
+
+    <SeekBar
+        android:id="@+id/song_progress"
+        android:layout_below="@id/audio_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="28dp"
+        android:progress="0"
+        android:tag="tint_accent_color" />
+    <TextView
+        android:id="@+id/time_elapsed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/cera_pro_regular"
+        android:text="0:00"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:layout_below="@+id/song_progress"/>
+    <TextView
+        android:id="@+id/time_remaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/cera_pro_regular"
+        android:text="10:35"
+        android:textColor="@color/white"
+        android:layout_alignParentEnd="true"
+        android:textSize="15sp"
+        android:layout_below="@+id/song_progress"/>
+
+    <com.ohoussein.playpause.PlayPauseView
+        android:id="@+id/play_pause_view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:clickable="true"
+        android:layout_centerHorizontal="true"
+        android:foreground="?android:selectableItemBackground"
+        android:layout_above="@+id/speed"
+        android:layout_marginBottom="40dp"
+        app:fill_color="#152247"
+        app:pause_bg="#ffffff"
+        app:play_bg="#ffffff" />
+    <ImageView
+        android:layout_width="40dp"
+        android:id="@+id/skip_back"
+        android:layout_height="40dp"
+        android:layout_marginBottom="50dp"
+        android:layout_toLeftOf="@+id/play_pause_view"
+        android:layout_above="@id/speed"
+        android:layout_marginRight="50dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_skip_15_back_24dp" />
+    <ImageView
+        android:layout_width="40dp"
+        android:id="@+id/skip_front"
+        android:layout_marginLeft="50dp"
+        android:layout_toRightOf="@id/play_pause_view"
+        android:layout_marginBottom="50dp"
+        android:layout_above="@id/speed"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_skip_15_forward_24dp" />
+
+    <TextView
+        android:id="@+id/speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cera_pro_bold"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="1.0x"
+        android:textColor="@color/white"
+        android:layout_marginBottom="20dp"
+        android:textSize="25sp" />
+
+</RelativeLayout>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:height="106.32dp" android:width="113.47dp" android:viewportWidth="113.47" android:viewportHeight="106.32">
+    <path android:name="education" android:fillColor="#05517d" android:pathData="M113.47,28.23,56.74,0,0,28.23l10,4.95v57L2,106l22.25 0.34 L16,90.2v-54l7.2,3.58V66.6c0,9.64,16.32,18.75,33.59,18.75S90.32,76.24,90.32,66.6V39.74ZM56.74,6.7,100,28.23,90.32,33h0l-28.19,14-5.39,2.68L13.47,28.23ZM84.32,66.6c0,4.48-11.38,12.75-27.58,12.75S29.15,71.08,29.15,66.6V43.13L55.46,55.82l1.28 0.63 h0l18-8.95,9.56-4.76Z"/>
+</vector>

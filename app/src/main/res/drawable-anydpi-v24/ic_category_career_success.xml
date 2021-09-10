@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:height="109.28dp" android:width="109.3dp" android:viewportWidth="109.3" android:viewportHeight="109.28">
+    <path android:name="career-and-success" android:fillColor="#05517d" android:pathData="M109.3,16.51,95,14.26,92.79,0,77.43,15.36A50.78,50.78,0,1,0,93.94,31.87ZM80.28,21l2.12-2.12,6.3-6.29,1.09,6.92,6.93,1.1-6.3,6.3L88.3,29l-0.75 0.75 -2.92-0.46-4-0.64-0.64-4-0.46-2.93ZM95.52,58.52A44.83,44.83,0,1,1,73.15,19.79l1.62,10.3-2.22,2.23a34.33,34.33,0,1,0,4.25,4.24l2.08-2.09,10.63,1.68A44.57,44.57,0,0,1,95.52,58.52Zm-33.39,0a11.4,11.4,0,1,1-5.78-9.89L48.05,57l4.26,4.23,8.3-8.36A11.32,11.32,0,0,1,62.13,58.52ZM60.67,44.28a17.42,17.42,0,1,0,4.26,4.23l7.63-7.68A28.14,28.14,0,1,1,68.3,36.6Z"/>
+</vector>

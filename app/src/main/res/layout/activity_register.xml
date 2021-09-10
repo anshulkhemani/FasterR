@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationContentDescription="@string/accessibility_action_bar_up_description"
+            app:navigationIcon="@drawable/ic_arrow_back_24dp"
+            app:titleTextAppearance="@style/ToolbarTitleBoldTextAppearance"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/onboarding_signup_title"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            style="@style/T28"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Name"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            style="@style/T18"/>
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_border"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:fontFamily="@font/cera_pro_regular"
+            android:textColorHighlight="@color/fastergreen"
+            android:inputType="text"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="E-mail address"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            style="@style/T18"/>
+        <EditText
+            android:id="@+id/registerEmail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_border"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:fontFamily="@font/cera_pro_regular"
+            android:textColorHighlight="@color/fastergreen"
+            android:inputType="textEmailAddress"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Password"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            style="@style/T18"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edit_text_border"
+            android:textColorHighlight="@color/fastergreen"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:fontFamily="@font/cera_pro_regular"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="24dp"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/registerPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword"
+                android:background="@null"
+                android:letterSpacing="0.2"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/usertype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="User type"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            style="@style/T18"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:background="@drawable/edit_text_border"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:id="@+id/userSpinner"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/sign_up_btn_create_account"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textColor="#ffffff"
+            android:background="@color/fastergreen"
+            android:fontFamily="@font/cera_pro_bold"
+            android:textAllCaps="false"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button android:id="@+id/registerFacebookButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_log_in_facebook"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/cera_pro_bold"
+            android:textColor="#ffffff"
+            android:drawableLeft="@drawable/ic_facebook"
+            android:textAllCaps="false"
+            android:backgroundTint="#3b5998" />
+
+
+        <Button android:id="@+id/registerGoogleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_log_in_google"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/cera_pro_bold"
+            android:textColor="#ffffff"
+            android:drawableLeft="@drawable/ic_google_white_bg"
+            android:textAllCaps="false"
+            android:backgroundTint="#4285f4" />
+
+
+    </LinearLayout>
+</ScrollView>

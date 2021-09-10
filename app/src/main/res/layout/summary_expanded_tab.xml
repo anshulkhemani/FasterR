@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:background="#152247"
+        android:orientation="vertical"
+        app:layout_collapseMode="pin">
+
+
+        <TextView
+            android:id="@+id/summary_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/cera_pro_bold"
+            android:text="What’s in it for me? Learn why taking a wide-ranging approach to life will pay off."
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/summary_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/cera_pro_regular"
+            android:text="In our complex and cutthroat world, there’s a lot of pressure to get a head start and specialize early. Many successful people, such as Tiger Woods, start to focus on one path early in life. But delve a little deeper, and it becomes clear that it’s generalists, not specialists, who are primed to excel.
+\n\nGeneralists may take a little longer to find their path in life, but they are more creative, can make connections between diverse fields that specialists cannot. This makes them more innovative and, ultimately, more impactful.\n
+\nDrawing on examples from medicine to academia to sport, these blinks explore how breadth and range are far more powerful than specialized expertise. They also show that experts often judge their own fields more narrowly than open-minded, intellectually curious amateurs do.
+\n\nThis trend toward specialization doesn’t only show up in the sports world. In fact, it’s also true of academia, our complex financial system and medicine. Oncologists, for example, now rarely focus on cancer alone. Rather, they specialize in cancer of a particular organ. The writer and surgeon Atul Gawande notes that when doctors joke about right-ear surgeons, we shouldn’t be so quick to assume they don’t actually exist."
+            android:textColor="@color/white"
+            android:textSize="19sp"/>
+
+    </LinearLayout>
+</ScrollView>

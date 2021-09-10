@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="@color/white">
+
+            <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:navigationContentDescription="@string/accessibility_action_bar_up_description"
+                app:navigationIcon="@drawable/ic_arrow_back_24dp"
+                android:layout_marginTop="12dp"
+                app:titleTextAppearance="@style/ToolbarTitleBoldTextAppearance">
+                <EditText
+                    android:textColor="@color/blackish"
+                    android:fontFamily="@font/cera_pro_regular"
+                    android:id="@+id/library_book_search"
+                    android:background="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Titles, authors or topics" />
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/suggestions"
+            android:text="Suggestions"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/blackish"
+            android:fontFamily="@font/cera_pro_medium"
+            android:layout_marginLeft="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/suggestions_example"
+            android:text="mind\n\nleadership\n\nsleep\n\nfinance\n\nscience"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/blackish"
+            android:fontFamily="@font/cera_pro_thin"
+            android:layout_marginLeft="20dp"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/searchRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_marginBottom="50dp"/>
+
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp">
+
+    <ImageView
+        android:layout_width="90dp"
+        android:id="@+id/book_tab_image"
+        android:layout_height="90dp"
+        android:scaleType="centerCrop"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/money" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/book_tab_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cera_pro_bold"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/book_tab_name"
+        android:text="Range"
+        android:textColor="@color/blackish"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/book_tab_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/cera_pro_regular"
+        android:text="David Epstein"
+        android:textColor="@color/blackish"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/book_tab_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/cera_pro_thin"
+        android:visibility="gone"
+        android:text="Why Generalists Triumph in a Specialized World"
+        android:textColor="@color/blackish"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/book_tab_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/cera_pro_regular"
+        android:text="Summary - 15 mins"
+        android:textColor="@color/grayish"
+        android:textSize="13sp" />
+    </LinearLayout>
+    <View
+        android:layout_below="@+id/book_tab_image"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="20dp"
+        android:background="#e3e3e3"
+        />
+</RelativeLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="170dp"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp">
+    <ImageView
+        android:layout_width="170dp"
+        android:id="@+id/book_tab_image"
+        android:layout_height="170dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/money" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/cera_pro_bold"
+        android:id="@+id/book_tab_name"
+        android:text="Range"
+        android:textColor="@color/blackish"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/book_tab_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/cera_pro_regular"
+        android:text="David Epstein"
+        android:textColor="@color/blackish"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/book_tab_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/cera_pro_thin"
+        android:text="Why Generalists Triumph in a Specialized World"
+        android:textColor="@color/blackish"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/book_tab_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/cera_pro_regular"
+        android:text="Summary - 15 mins"
+        android:textColor="@color/grayish"
+        android:textSize="13sp" />
+
+</LinearLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Book Name"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        style="@style/T18"/>
+    <EditText
+        android:id="@+id/alertBookName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_border"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:fontFamily="@font/cera_pro_regular"
+        android:textColorHighlight="@color/fastergreen"
+        android:inputType="text"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Author Name"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        style="@style/T18"/>
+    <EditText
+        android:id="@+id/alertBookAuthor"
+        android:inputType="textCapSentences|textMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_border"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:fontFamily="@font/cera_pro_regular"
+        android:textColorHighlight="@color/fastergreen"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Book Description"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        style="@style/T18"/>
+    <EditText
+        android:id="@+id/alertBookDescription"
+        android:inputType="textCapSentences|textMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_border"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:fontFamily="@font/cera_pro_regular"
+        android:textColorHighlight="@color/fastergreen"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_height="70dp"
+        android:background="@color/fastergreen"
+        android:text="Add Book"
+        android:fontFamily="@font/cera_pro_bold"
+        android:textSize="20sp"
+        android:id="@+id/alertAdd" />
+</LinearLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_height="70dp"
+            android:background="@color/fastergreen"
+            android:text="Select Image"
+            android:fontFamily="@font/cera_pro_bold"
+            android:textSize="20sp"
+            android:id="@+id/select_image" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="News Topic"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            style="@style/T18"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:background="@drawable/edit_text_border"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:id="@+id/pageSpinner"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="News Heading"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            style="@style/T18"/>
+        <EditText
+            android:id="@+id/news_heading"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_border"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:fontFamily="@font/cera_pro_regular"
+            android:textColorHighlight="@color/fastergreen"
+            android:inputType="text"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="News Content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            style="@style/T18"/>
+        <EditText
+            android:id="@+id/news_content"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:gravity="start"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_border"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:fontFamily="@font/cera_pro_regular"
+            android:textColorHighlight="@color/fastergreen"
+            android:inputType="textMultiLine"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginTop="40dp"
+            android:layout_height="70dp"
+            android:background="@color/fastergreen"
+            android:text="Add"
+            android:fontFamily="@font/cera_pro_bold"
+            android:textSize="20sp"
+            android:id="@+id/add_news" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:aapt="http://schemas.android.com/aapt"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:background="#ffffff"
+            android:theme="@style/SurfaceAsBackgroundThemeOverlay">
+
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:collapsedTitleTextAppearance="@style/CustomCollapsingToolbar"
+                app:contentScrim="#ffffff"
+                app:expandedTitleMarginStart="16dp"
+                app:expandedTitleTextAppearance="@style/CustomCollapsingToolbar"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+                app:title="Name">
+
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:id="@+id/lib_address"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cera_pro_bold"
+                            android:textSize="15sp"
+                            android:textColor="@color/blackish"
+                            android:text="Address"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/blackish"
+                            android:id="@+id/lib_dist"
+                            android:textSize="15sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:text="3 KM"/>
+
+                    </LinearLayout>
+                </androidx.appcompat.widget.Toolbar>
+
+                <View
+                    android:id="@+id/divider"
+                    style="@style/BigTitleUnderline"
+                    android:layout_gravity="bottom" />
+
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/searchView"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:contentDescription="@string/search"
+                    app:cardBackgroundColor="#e3e6e4">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_margin="12dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_search_selected"
+                        android:tint="@color/blackish" />
+
+                    <EditText
+                        style="@style/P16Secondary"
+                        android:id="@+id/library_book_search"
+                        android:background="@null"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="44dp"
+                        android:hint="Titles or authors" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/cera_pro_bold"
+                    android:text="Books Available"
+                    android:textColor="@color/blackish"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/categoryRecycler"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingBottom="8dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</RelativeLayout>
