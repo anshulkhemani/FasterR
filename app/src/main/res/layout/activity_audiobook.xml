@@ -34,20 +34,37 @@
         android:layout_marginTop="15dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
+        android:visibility="visible"
         android:src="@mipmap/book_background"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="20dp"/>
+    <TextView
+        android:id="@+id/audio_summary_text"
+        android:layout_below="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:fontFamily="@font/cera_pro_bold"
+        android:text=""
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
     <TextView
         android:id="@+id/audio_heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/cera_pro_bold"
         android:text="Range"
         android:layout_centerHorizontal="true"
         android:textColor="@color/white"
+        android:textAlignment="center"
         android:textSize="30sp"
-        android:layout_below="@+id/audiobook_cover"/>
+        android:layout_above="@+id/audio_author" />
     <TextView
         android:id="@+id/audio_author"
         android:layout_width="wrap_content"
@@ -59,11 +76,11 @@
         android:layout_centerHorizontal="true"
         android:textColor="@color/white"
         android:textSize="17sp"
-        android:layout_below="@+id/audio_heading"/>
+        android:layout_above="@+id/song_progress"/>
 
     <SeekBar
         android:id="@+id/song_progress"
-        android:layout_below="@id/audio_author"
+        android:layout_above="@id/audiobooks_captions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -94,6 +111,17 @@
         android:textSize="15sp"
         android:layout_below="@+id/song_progress"/>
 
+    <ImageView
+        android:layout_width="50dp"
+        android:id="@+id/audiobooks_captions"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="30dp"
+        android:layout_above="@id/play_pause_view"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/baseline_subtitles_off_24" />
+
     <com.ohoussein.playpause.PlayPauseView
         android:id="@+id/play_pause_view"
         android:layout_width="60dp"
@@ -102,7 +130,7 @@
         android:layout_centerHorizontal="true"
         android:foreground="?android:selectableItemBackground"
         android:layout_above="@+id/speed"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="30dp"
         app:fill_color="#152247"
         app:pause_bg="#ffffff"
         app:play_bg="#ffffff" />
@@ -110,7 +138,7 @@
         android:layout_width="40dp"
         android:id="@+id/skip_back"
         android:layout_height="40dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="40dp"
         android:layout_toLeftOf="@+id/play_pause_view"
         android:layout_above="@id/speed"
         android:layout_marginRight="50dp"
@@ -121,7 +149,7 @@
         android:id="@+id/skip_front"
         android:layout_marginLeft="50dp"
         android:layout_toRightOf="@id/play_pause_view"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="40dp"
         android:layout_above="@id/speed"
         android:layout_height="40dp"
         android:layout_centerVertical="true"

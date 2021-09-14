@@ -26,17 +26,12 @@
                 android:textColor="#152247"
                 android:textSize="50sp"/>
 </LinearLayout>
-<!--ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:src="@drawable/ic_time"
-    android:layout_marginBottom="180dp"/-->
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:lottie_rawRes="@raw/loading"
         android:layout_gravity="center"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"/>
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true" />
 </LinearLayout>

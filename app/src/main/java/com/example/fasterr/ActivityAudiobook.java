@@ -3,9 +3,11 @@ package com.example.fasterr;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
+import android.speech.tts.UtteranceProgressListener;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -37,6 +39,7 @@ public class ActivityAudiobook extends AppCompatActivity {
     private TextView book_name, author_name, speed,time_elapsed;
     int next = 0;
     float time=0.00f;
+    TextView audiobook_subtitles;
     int pos =0,mCurrentPosition=0;
     String doubleAsString = "";
     int indexOfDecimal = 0;
@@ -61,14 +64,40 @@ public class ActivityAudiobook extends AppCompatActivity {
             @Override
             public void onInit(int status) {
                 if(status != TextToSpeech.ERROR) {
-                    engine.setLanguage(Locale.UK);
+                    engine.setLanguage(Locale.US);
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(),"Engine error",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Engine error",Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+        engine.setOnUtteranceProgressListener(new UtteranceProgressListener() {
+            @Override
+            public void onStart(final String utteranceId) {
+                ActivityAudiobook.this.runOnUiThread(new Runnable()
+                {
+                    public void run()
+                    {
+                        if(!utteranceId.equals(" "))
+                            audiobook_subtitles.setText(utteranceId+".");
+                    }
+                });
+            }
+
+            @Override
+            public void onDone(String utteranceId) {
+
+            }
+
+            @Override
+            public void onError(String utteranceId) {
+
+            }
+        });
+
+
         seek = findViewById(R.id.song_progress);
         time_elapsed = findViewById(R.id.time_elapsed);
 
@@ -89,10 +118,10 @@ public class ActivityAudiobook extends AppCompatActivity {
                     sec=doubleAsString.substring(indexOfDecimal+1);
                     sec = sec.substring(0, Math.min(sec.length(), 2));
 
-                    if(sec.equals("60"))
+                    if(sec.equals("59"))
                     {
                         time++;
-                        time-=0.60f;
+                        time-=0.59f;
                     }
                     count++;
                     runOnUiThread(new Runnable() {
@@ -135,6 +164,28 @@ public class ActivityAudiobook extends AppCompatActivity {
             }
         });
 
+        audiobook_subtitles = findViewById(R.id.audio_summary_text);
+
+        final ImageView audiobooks_captions = findViewById(R.id.audiobooks_captions);
+
+        audiobooks_captions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(audiobook_subtitles.getVisibility()==View.GONE)
+                {
+                    audiobook_subtitles.setVisibility(View.VISIBLE);
+                    cover.setVisibility(View.GONE);
+                    audiobooks_captions.setImageResource(R.drawable.baseline_subtitles_24);
+                }
+                else
+                {
+                    audiobook_subtitles.setVisibility(View.GONE);
+                    cover.setVisibility(View.VISIBLE);
+                    audiobooks_captions.setImageResource(R.drawable.baseline_subtitles_off_24);
+                }
+            }
+        });
+
         speed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -154,6 +205,9 @@ public class ActivityAudiobook extends AppCompatActivity {
                     engine.setSpeechRate(0.5f);
                     speed.setText("0.5x");
                 } else if (speed.getText().toString().equals("0.5x")) {
+                    engine.setSpeechRate(0.75f);
+                    speed.setText("0.75x");
+                } else if (speed.getText().toString().equals("0.75x")) {
                     engine.setSpeechRate(1f);
                     speed.setText("1.0x");
                 }
@@ -178,11 +232,11 @@ public class ActivityAudiobook extends AppCompatActivity {
 
     public void AddItemsToRecyclerViewArrayList() {
         for (int i = 0; i < mp.size() - 1; i++) {
-            toSpeak = toSpeak.concat("Page " + (i + 1) + "... ");
+            toSpeak = toSpeak.concat("Page " + (i + 1) + ". .");
             toSpeak = toSpeak.concat(mp.get(i + 1).get(0));
-            toSpeak = toSpeak.concat("... ");
+            toSpeak = toSpeak.concat(".");
             toSpeak = toSpeak.concat(mp.get(i + 1).get(1));
-            toSpeak = toSpeak.concat("... ... ");
+            toSpeak = toSpeak.concat(". . .");
         }
     }
 
@@ -199,10 +253,11 @@ public class ActivityAudiobook extends AppCompatActivity {
                 HashMap<String, String> params = new HashMap<String, String>();
                 params.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, temp);
                 engine.speak(temp, TextToSpeech.QUEUE_ADD, params);
+                engine.playSilence(100,TextToSpeech.QUEUE_ADD,params);
                 pos = next+1;
                 nex();
             } catch (Exception e) {
-                temp = testStri.substring(pos, testStri.length());
+                temp = testStri.substring(pos);
                 engine.speak(temp, TextToSpeech.QUEUE_ADD, null);
                 break;
             }
@@ -210,7 +265,7 @@ public class ActivityAudiobook extends AppCompatActivity {
     }
     private void nex()
     {
-        next=toSpeak.indexOf("\n",pos);
+        next=toSpeak.indexOf(".",pos);
         if((next-pos)>engine.getMaxSpeechInputLength()-1)
             next=pos+engine.getMaxSpeechInputLength()-1;
         if(next==-1)

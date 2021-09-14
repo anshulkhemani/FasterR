@@ -2,10 +2,13 @@ package com.example.fasterr;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseError;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     String type = dataSnapshot.child("usertype").getValue().toString();
-                    Toast.makeText(getApplicationContext(), "usertype - " + type, Toast.LENGTH_LONG).show();
                     if (type.equals("admin")) {
                         Intent intent = new Intent(MainActivity.this, ActivityAdmin.class);
                         startActivity(intent);

@@ -46,7 +46,7 @@ public class HomeFragment extends Fragment {
     ArrayList<BookDataObject> source;
     // TODO: Rename and change types of parameters
     private String mParam1;
-    private String mParam2;
+    private String mParam2,freeBook;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -129,6 +129,20 @@ public class HomeFragment extends Fragment {
 
     }
     public void AddItemsToRecyclerViewArrayList() {
+        final DatabaseReference ref= FirebaseDatabase.getInstance().getReference("daybook");
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+                    freeBook=dataSnapshot.child("book").getValue().toString();
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
         bookList=new ArrayList<>();
         final DatabaseReference nm= FirebaseDatabase.getInstance().getReference("books");
         nm.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -137,18 +151,21 @@ public class HomeFragment extends Fragment {
                 if (dataSnapshot.exists()){
                     for (DataSnapshot npsnapshot : dataSnapshot.getChildren()){
                         BookDataObject l=npsnapshot.getValue(BookDataObject.class);
+                        if(freeBook!=null && npsnapshot.getKey().equals(freeBook))
+                        {
+                            freeBookName.setText(l.getBookName());
+                            freeBookAuthor.setText(l.getAuthor());
+                            freeBookDesc.setText(l.getDescription());
+                            freeBookTime.setText(l.getTime());
+                            StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("books/"+l.getBookName().replace(" ",""));
+                            GlideApp.with(root)
+                                    .load(storageReference)
+                                    .into(freeBookImg);
+                        }
                         bookList.add(l);
                     }
                     BookAdapter adapter=new BookAdapter(bookList);
                     recyclerView.setAdapter(adapter);
-                    freeBookName.setText(bookList.get(0).getBookName());
-                    freeBookAuthor.setText(bookList.get(0).getAuthor());
-                    freeBookDesc.setText(bookList.get(0).getDescription());
-                    freeBookTime.setText(bookList.get(0).getTime());
-                    StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("books/"+freeBookName.getText().toString().replace(" ",""));
-                    GlideApp.with(root)
-                            .load(storageReference)
-                            .into(freeBookImg);
                 }
             }
             @Override

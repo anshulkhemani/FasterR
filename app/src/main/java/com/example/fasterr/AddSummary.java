@@ -218,6 +218,16 @@ public class AddSummary extends AppCompatActivity {
     // UploadImage method
     private void uploadImage()
     {
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("daybook");
+        myRef.child("book").setValue(bookName.getText().toString().replace(" ","")).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(AddSummary.this,"Book of the day updated",Toast.LENGTH_LONG).show();
+            }
+        });
+
         if (filePath != null) {
 
             // Code for showing progressDialog while uploading
