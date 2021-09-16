@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -33,16 +34,14 @@ public class ActivityAudiobook extends AppCompatActivity {
     private TextToSpeech engine;
     private ArrayList<List<String>> mp;
     private String bookName, toSpeak,mins,sec;
+    private String sentences[];
     private SeekBar seek;
-    private ImageView cover;
+    private ImageView cover,skip_back,skip_front;
     private int count=0;
-    private TextView book_name, author_name, speed,time_elapsed;
-    int next = 0;
-    float time=0.00f;
+    private TextView book_name, author_name, speed,time_elapsed,time_remaining;
+    int time=0,minutes=0,seconds=0;
     TextView audiobook_subtitles;
-    int pos =0,mCurrentPosition=0;
-    String doubleAsString = "";
-    int indexOfDecimal = 0;
+    int curr=0,mCurrentPosition=0,maxS=0,incr=3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +52,8 @@ public class ActivityAudiobook extends AppCompatActivity {
         cover = findViewById(R.id.audiobook_cover);
         speed = findViewById(R.id.speed);
         book_name = findViewById(R.id.audio_heading);
+        skip_back = findViewById(R.id.skip_back);
+        skip_front = findViewById(R.id.skip_front);
         toSpeak="";
         author_name = findViewById(R.id.audio_author);
         StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("books/" + bookName.replace(" ", ""));
@@ -73,6 +74,40 @@ public class ActivityAudiobook extends AppCompatActivity {
             }
         });
 
+        skip_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HashMap<String, String> params = new HashMap<String, String>();
+                params.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "");
+                engine.speak("",TextToSpeech.QUEUE_FLUSH, params);
+                curr=curr>4?curr-=4:0;
+                engine.stop();
+                final String t = timer(-15);
+                mCurrentPosition--;
+                time_elapsed.setText(t);
+                speech();
+            }
+        });
+
+        skip_front.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(curr<maxS-1)
+                {
+                    curr+=2;
+                }
+                else
+                {
+                    curr=maxS;
+                }
+                engine.stop();
+                count+=15;
+                final String t = timer(15);
+                time_elapsed.setText(t);
+                speech();
+            }
+        });
+
         engine.setOnUtteranceProgressListener(new UtteranceProgressListener() {
             @Override
             public void onStart(final String utteranceId) {
@@ -80,10 +115,13 @@ public class ActivityAudiobook extends AppCompatActivity {
                 {
                     public void run()
                     {
-                        if(!utteranceId.equals(" "))
+                        if(!utteranceId.equals(" ") && !utteranceId.equals("."))
                             audiobook_subtitles.setText(utteranceId+".");
+
+                        speech();
                     }
                 });
+
             }
 
             @Override
@@ -100,34 +138,23 @@ public class ActivityAudiobook extends AppCompatActivity {
 
         seek = findViewById(R.id.song_progress);
         time_elapsed = findViewById(R.id.time_elapsed);
+        time_remaining=findViewById(R.id.time_remaining);
 
-        Timer timer = new Timer();
+        final Timer timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 if(engine.isSpeaking()) {
-                    if(count>3) {
+                    if(count>incr) {
                         seek.setProgress(mCurrentPosition);
                         mCurrentPosition++;
                         count=0;
                     }
-                    time+=0.01f;
-                    doubleAsString = String.valueOf(time);
-                    int indexOfDecimal = doubleAsString.indexOf(".");
-                    mins=doubleAsString.substring(0, indexOfDecimal);
-                    sec=doubleAsString.substring(indexOfDecimal+1);
-                    sec = sec.substring(0, Math.min(sec.length(), 2));
-
-                    if(sec.equals("59"))
-                    {
-                        time++;
-                        time-=0.59f;
-                    }
-                    count++;
+                    final String t = timer(1);
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            time_elapsed.setText(mins+":"+sec);
+                            time_elapsed.setText(t);
                         }
                     });
                 }
@@ -144,7 +171,6 @@ public class ActivityAudiobook extends AppCompatActivity {
                 mp = new ArrayList<>();
                 mp = (ArrayList<List<String>>) dataSnapshot.child("mp").getValue();
                 AddItemsToRecyclerViewArrayList();
-                nex();
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -157,8 +183,9 @@ public class ActivityAudiobook extends AppCompatActivity {
             public void onClick(View v) {
                 view.toggle();
                 if (!engine.isSpeaking())
-                    speech(toSpeak);
+                    speech();
                 else {
+                    curr=curr>1?curr-=2:0;
                     engine.stop();
                 }
             }
@@ -218,6 +245,7 @@ public class ActivityAudiobook extends AppCompatActivity {
         seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
             }
 
             @Override
@@ -230,46 +258,54 @@ public class ActivityAudiobook extends AppCompatActivity {
         });
     }
 
+    private String timer(int secs)
+    {
+        time+=secs;
+        if(time<0)
+            time=0;
+        minutes = time/60;
+        seconds=time%60;
+        mins=String.valueOf(minutes);
+        sec=String.valueOf(seconds);
+        if(seconds<10)
+            sec="0"+sec;
+        count++;
+        return (mins+":"+sec);
+    }
+
     public void AddItemsToRecyclerViewArrayList() {
         for (int i = 0; i < mp.size() - 1; i++) {
-            toSpeak = toSpeak.concat("Page " + (i + 1) + ". .");
+            toSpeak = toSpeak.concat("Page " + (i + 1) + ". ");
             toSpeak = toSpeak.concat(mp.get(i + 1).get(0));
-            toSpeak = toSpeak.concat(".");
+            toSpeak = toSpeak.concat(" ");
             toSpeak = toSpeak.concat(mp.get(i + 1).get(1));
-            toSpeak = toSpeak.concat(". . .");
+            toSpeak = toSpeak.concat(". ");
         }
+        toSpeak = toSpeak.concat("The end");
+        sentences=toSpeak.split("\\.\\s+");
+        int s = toSpeak.length() / 15;
+        incr = s/100;
+        int m = s/60;
+        int se =s%60;
+        String mi=String.valueOf(m);
+        String secs=String.valueOf(se);
+        if(se<10)
+            secs="0"+secs;
+        count++;
+        time_remaining.setText(mi+":"+secs);
+        maxS=sentences.length;
     }
 
-    private void speech(String charSequence) {
-
-        int position=0;
-        int sizeOfChar= charSequence.length();
-        String testStri= charSequence.substring(position,sizeOfChar);
-
-        while(true) {
-            String temp="";
-            try {
-                temp = testStri.substring(pos, next);
-                HashMap<String, String> params = new HashMap<String, String>();
-                params.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, temp);
-                engine.speak(temp, TextToSpeech.QUEUE_ADD, params);
-                engine.playSilence(100,TextToSpeech.QUEUE_ADD,params);
-                pos = next+1;
-                nex();
-            } catch (Exception e) {
-                temp = testStri.substring(pos);
-                engine.speak(temp, TextToSpeech.QUEUE_ADD, null);
-                break;
-            }
+    private void speech() {
+        if(curr>=maxS)
+        {
+            engine.stop();
+            return;
         }
-    }
-    private void nex()
-    {
-        next=toSpeak.indexOf(".",pos);
-        if((next-pos)>engine.getMaxSpeechInputLength()-1)
-            next=pos+engine.getMaxSpeechInputLength()-1;
-        if(next==-1)
-            next=pos+engine.getMaxSpeechInputLength()-1;
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, sentences[curr]);
+        engine.speak(sentences[curr], TextToSpeech.QUEUE_ADD, params);
+        curr++;
     }
 
     @Override
